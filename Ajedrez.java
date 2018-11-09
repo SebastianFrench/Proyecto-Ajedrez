@@ -1,4 +1,4 @@
-package ajedrez;
+﻿package ajedrez;
 import java.util.Scanner;
 public class AJEDREZ {
    public static String[][] Tablero(Scanner sc){
@@ -55,6 +55,6 @@ public class AJEDREZ {
                     break;
         }
         }while (opcion>4 || opcion<=0);
-        //Tablero(sc);
+        
     }
 }
