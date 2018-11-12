@@ -34,12 +34,31 @@ public class AJEDREZ {
     public static boolean fichas(String ficha ){
       boolean validezFicha=true; 
       String RN="RN";
+      String RB="RB";
+      String DN="DN";
+      String DB="DB";
+      String TN="TN";
+      String TB="TB";
       if(!ficha.equalsIgnoreCase(RN)){
-        validezFicha=false;
+          if(!ficha.equalsIgnoreCase(RB)){
+              if(!ficha.equalsIgnoreCase(DN)){
+                  if(!ficha.equalsIgnoreCase(DB)){
+                      if(!ficha.equalsIgnoreCase(TN)){
+                          if(!ficha.equalsIgnoreCase(TB)){
+                              validezFicha=false;
+                          }
+                      }
+                  }
+              }
+          }
+          
       }
-      
-    return validezFicha;
+      return validezFicha;
     }
+      
+      
+      
+    
     public static void Jaques(){
     
     
