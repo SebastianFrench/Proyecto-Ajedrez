@@ -6,6 +6,8 @@ public class AJEDREZ {
 
     public static String[][] tablero = new String[8][8]; // Defino Matriz String para todo el codigo, con nombre tablero
     public static String ficha;
+    public static String[] pieza = {"RN,RB"};
+    public static int[] can = {1, 1};
 
     /**
      * Recibe un Scanner
@@ -38,17 +40,29 @@ public class AJEDREZ {
     public static boolean fichas(String ficha) {
         boolean validezFicha = true;
         String RN = "RN";
+        int numRN = 0;
         String RB = "RB";
+        int numRB = 0;
         String DN = "DN";
+        int numDN = 0;
         String DB = "DB";
+        int numDB = 0;
         String TN = "TN";
+        int numTN = 0;
         String TB = "TB";
+        int numTB = 0;
         String AN = "AN";
+        int numAN = 0;
         String AB = "AB";
+        int numAB = 0;
         String CN = "CN";
+        int numCN = 0;
         String CB = "CB";
+        int numCB = 0;
         String PN = "PN";
+        int numPN = 0;
         String PB = "PB";
+        int numPB = 0;
 
         if (!ficha.equalsIgnoreCase(RN)) {
             if (!ficha.equalsIgnoreCase(RB)) {
@@ -83,7 +97,39 @@ public class AJEDREZ {
     }
 
     public static void Jaques() {
+        Boolean comprobacionReyN=false;
+        Boolean comprobacionReyB=false;
+        int filaR=0;
+        int columnaR=0;
+        int count=0;
+        for (int fila1 = 0; fila1 < 8; fila1++) {
+            for (int columna1 = 0; columna1 < 8; columna1++) {
+                if (ficha.equalsIgnoreCase("RN")) {
+                    comprobacionReyN=true;
+                    filaR=fila1;
+                    columnaR=columna1;
+                }
+            }
+        }
+        for (int fila = 0; fila < 8; fila++) {
+            for (int columna = 0; columna < 8; columna++) {
+                if (ficha.equalsIgnoreCase("RB")) {
+                    comprobacionReyB=true;
+                }
+            }
+        }
         
+        if(comprobacionReyN==true){
+            for (int fila = filaR;count<1  ; count++) {
+                for (int columna = columnaR; count < 1; count++) {
+                if (ficha.equalsIgnoreCase("TB")) {
+                    System.out.println("Jaque con torre");
+                    
+                }
+            }
+        }
+        
+        }
 
     }
 
@@ -119,12 +165,15 @@ public class AJEDREZ {
                     imprimirTablero();
                     break;
                 case 3:
-
+                    Jaques();
                     break;
                 case 4:
                     break;
+                default:
+                    System.out.println("Opción no valida");
+
             }
-        } while (opcion > 4 || opcion <= 0);
+        } while (opcion != 4);
         return opcion;
     }
 
@@ -135,12 +184,7 @@ public class AJEDREZ {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
         int opcion = 0;
-        while (salir == false) {
-            Menu(sc, opcion);
-            if (Menu(sc, opcion) == 4) {
-                salir = true;
-            }
+        Menu(sc, opcion);
 
-        }
     }
 }
